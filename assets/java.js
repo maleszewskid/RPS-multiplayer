@@ -33,10 +33,10 @@ database.ref().on("child_added", function(childSnapshot) {
 
     $("#leaderboards").append("<div class='well'><span>Username: " +
         childSnapshot.val().User +
-        " </span><span > Wins: " + childSnapshot.val().Win +
-        " </span><span > Losses: " + childSnapshot.val().Loss +
-        " </span><span > Ties: " + childSnapshot.val().Tie +
-        "</span><span > Comments: " + childSnapshot.val().Comment +
+        " </span><span > | Wins: " + childSnapshot.val().Win +
+        " </span><span > | Losses: " + childSnapshot.val().Loss +
+        " </span><span > | Ties: " + childSnapshot.val().Tie +
+        "</span><span > | Comments: " + childSnapshot.val().Comment +
         "</span>")
 })
 
