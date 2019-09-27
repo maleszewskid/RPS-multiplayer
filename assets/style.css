@@ -1,0 +1,21 @@
+.btn {
+    background-color: black;
+    color: white;
+    text-align: right;
+    font-size: 20px;
+}
+
+.jumbotron {
+    background-color: lightslategray;
+    align-content: center;
+}
+
+h1 {
+    background-color: lightslategray;
+    text-align: center;
+    font-weight: bold;
+}
+
+#submit {
+    background-color: green;
+}
