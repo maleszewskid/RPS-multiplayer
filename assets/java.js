@@ -19,7 +19,8 @@ var user = {
     userName: "",
     wins: 0,
     losses: 0,
-    ties: 0
+    ties: 0,
+    comment: ""
 
 }
 var userGuess = "";
@@ -32,9 +33,10 @@ database.ref().on("child_added", function(childSnapshot) {
 
     $("#leaderboards").append("<div class='well'><span>Username: " +
         childSnapshot.val().User +
-        " </span><span >Wins: " + childSnapshot.val().Win +
-        " </span><span >Losses: " + childSnapshot.val().Loss +
-        " </span><span >Ties: " + childSnapshot.val().Tie +
+        " </span><span > Wins: " + childSnapshot.val().Win +
+        " </span><span > Losses: " + childSnapshot.val().Loss +
+        " </span><span > Ties: " + childSnapshot.val().Tie +
+        "</span><span > Comments: " + childSnapshot.val().Comment +
         "</span>")
 })
 
@@ -44,6 +46,11 @@ $(document).on("click", "#submit", function newUser() {
     user.userName = $("#username").val().trim();
 
     alert("Welcome " + user.userName)
+})
+$(document).on("click", "#submit1", function newUser() {
+
+    user.comment = $("#comment").val().trim();
+
 })
 $(document).on("click", ".btn", function game() {
 
@@ -72,6 +79,7 @@ $(document).on("click", ".btn", function game() {
         User: user.userName,
         Win: user.wins,
         Loss: user.losses,
-        Tie: user.ties
+        Tie: user.ties,
+        Comment: user.comment
     })
 })
